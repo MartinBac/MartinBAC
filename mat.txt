@@ -1,0 +1,120 @@
+PERMUTACION SIN REPETICION: si se toman todos los elementos porque se toman las 4 cifras, si importa el orden porque los números no van a iguales y no se pueden repetir porque lo dice la consigna.
+
+a)       M = 4
+
+¡P = m!
+
+P = 24
+
+RTA: se pueden formar 24 números diferentes
+
+b)       M = 3 porque una posición (el 8 que es mayor al 7, ya se tomó, quedando 3 posiciones)
+
+¡P = m!
+
+P = 6
+
+RTA: 6 de ellos son mayores a 7000
+
+c)       M = 2 porque solo 2 números son menores a 5 (2,4)
+
+¡P = m!
+
+P = 2
+
+2 * 3 = 6 (porque 3 son las posiciones que están después del numero que ocupa su lugar)
+
+6 * 2 = 12 (porque son 6 posibilidades con dos números (2 ,4)
+
+ 
+
+ 
+
+6) Un servidor de automatización industrial debe ejecutar 8 tareas diarias en un orden secuencial específico. Las tareas consisten en: • 3 tareas de control de calidad idénticas • 2 tareas de mantenimiento de bases de datos idénticas • 3 tareas de actualización de software únicas y diferentes entre sí
+
+a) Si el servidor puede ordenar las 8 tareas de cualquier forma posible para generar un plan de ejecución ¿Cuántos planes de ejecución secuenciales distintos se pueden formar?
+
+ 
+
+ b) Para optimizar el rendimiento, el ingeniero del sistema decide que las 3 tareas de actualización de software deben ejecutarse juntas, una tras otra, en cualquier orden, formando un único bloque continuo de actualización. Las tareas de calidad y mantenimiento siguen manteniendo sus propiedades repetitivas. ¿Cuántos planes de ejecución distintos se pueden formar bajo esta nueva condición?
+
+ 
+
+a)       PERMUTACION CON REPETICION: porque el orden de las tareas importa y se toman todos los elementos.
+
+M = 8 A =3 B =2
+
+P = m! / a! * b!
+
+P = 40.320 / 6 * 2
+
+P = 3.360
+
+RTA: se pueden tomar 3.360 planea de ejecución diferentes
+
+b)       PERMUTACION CON REPETICION: con la diferencia que las 3 de actualización de software ahora las tomo como 1 sola
+
+M = 6 A = 3 B = 2
+
+P = m! / a!*b!
+
+P = 720 / 6*2
+
+P = 60
+
+PERMUTACION CON REPETICION: de las 3 maneras en que se puede formar el bloque de las actualizaciones de software.
+
+M = 3
+
+P = m!
+
+P = 6
+
+6 * 60 = 360
+
+RTA: bajo esta nueva condición se pueden formar 360 planes diferentes de ejecución
+
+ 
+
+ 
+
+7) Un departamento de ciberseguridad corporativa está diseñando un nuevo protocolo de autenticación dinámica para servidores críticos. El sistema genera códigos de acceso basados en una lista de 7 MATEMÁTICA DISCRETA identificadores alfanuméricos únicos: {A, B, C, D, E, F, G}. Para cada acceso, el sistema selecciona y ordena 4 identificadores de la lista para construir un token de validación.
+
+a) En el nivel de seguridad estándar, los tokens se generan bajo la condición estricta de que ningún identificador puede repetirse dentro del mismo código de 4 dígitos. ¿Cuántos tokens de autenticación distintos se pueden generar?
+
+b) Para el nivel de alta seguridad y debido al riesgo de ataques de fuerza bruta, el sistema habilitó la "reutilización de nodos". Esto significa que cualquiera de los 7 identificadores puede repetirse las veces que sea necesario dentro del mismo token de 4 dígitos. ¿Cuántos tokens de autenticación distintos se pueden generar bajo esta modalidad?
+
+a) VARIACION SIN REPETICION
+
+M = 7 N = 4
+
+V = m! / (m-n)!
+
+V = 5.040 / 6
+
+V  =840
+
+RTA: se pueden generar 840 token diferentes.
+
+b)VARIACION CON REPETICION
+
+M  =7 N  = 4
+
+V = m sobre n
+
+V = 2.401
+
+8) Un laboratorio farmacéutico analiza 9 principios activos químicos independientes para desarrollar un nuevo tratamiento. Para la primera fase de pruebas, se debe diseñar un compuesto experimental seleccionando exactamente 3 principios activos diferentes de los 9 disponibles. ¿Cuántos compuestos experimentales distintos se pueden formular?
+
+COMBINACION SIN REPETICION: no importa el orden porque los principios activos siempre están compuestos de lo mismo, no se trata de cual va primero o segundo sino de lo que contienen.
+
+M= 9 N= 3
+
+C = m! / n!*(m-n)!
+
+C= 362.880 / 6 * 720
+
+C= 84
+
+RTA: se pueden formular 84 experimentales diferentes.
+
