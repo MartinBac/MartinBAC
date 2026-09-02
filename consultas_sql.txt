@@ -1,0 +1,88 @@
+28. ¿Qué comercios distribuyen Windows?
+SELECT DISTINCT comercio.nombre 
+FROM comercio, distribuye, programa
+WHERE comercio.cif = distribuye.cif
+  AND distribuye.codigo = programa.codigo
+  AND programa.nombre = 'Windows';
+
+29. Genera un listado de los programas y cantidades que se han distribuido a El Corte Inglés de Madrid.
+SELECT programa.nombre, distribuye.cantidad
+FROM programa, distribuye, comercio
+WHERE programa.codigo = distribuye.codigo
+  AND distribuye.cif = comercio.cif
+  AND comercio.nombre = 'El Corte Inglés'
+  AND comercio.ciudad = 'Madrid';
+
+30. ¿Qué fabricante ha desarrollado Freddy Hardest?
+SELECT fabricante.nombre
+FROM fabricante, desarrolla, programa
+WHERE fabricante.id_fab = desarrolla.id_fab
+  AND desarrolla.codigo = programa.codigo
+  AND programa.nombre = 'Freddy Hardest';
+
+31. Selecciona el nombre de los programas que se registran por Internet.
+SELECT DISTINCT programa.nombre
+FROM programa, registra
+WHERE programa.codigo = registra.codigo
+  AND registra.medio = 'Internet';
+
+32. Selecciona el nombre de las personas que se registran por Internet.
+SELECT DISTINCT cliente.nombre
+FROM cliente, registra
+WHERE cliente.dni = registra.dni
+  AND registra.medio = 'Internet';
+
+33. ¿Qué medios ha utilizado para registrarse Pepe Pérez?
+SELECT DISTINCT registra.medio
+FROM registra, cliente
+WHERE registra.dni = cliente.dni
+  AND cliente.nombre = 'Pepe Pérez';
+
+34. ¿Qué usuarios han optado por Internet como medio de registro?
+SELECT DISTINCT cliente.nombre
+FROM cliente, registra
+WHERE cliente.dni = registra.dni
+  AND registra.medio = 'Internet';
+
+35. ¿Qué programas han recibido registros por tarjeta postal?
+SELECT DISTINCT programa.nombre
+FROM programa, registra
+WHERE programa.codigo = registra.codigo
+  AND registra.medio = 'Tarjeta postal';
+
+36. ¿En qué localidades se han vendido productos que se han registrado por Internet?
+SELECT DISTINCT comercio.ciudad
+FROM comercio, registra
+WHERE comercio.cif = registra.cif
+  AND registra.medio = 'Internet';
+
+37. Obtén un listado de los nombres de las personas que se han registrado por Internet, junto al nombre de los programas para los que ha efectuado el registro.
+SELECT cliente.nombre AS cliente, programa.nombre AS programa
+FROM cliente, registra, programa
+WHERE cliente.dni = registra.dni
+  AND registra.codigo = programa.codigo
+  AND registra.medio = 'Internet';
+
+38. Genera un listado en el que aparezca cada cliente junto al programa que ha registrado, el medio con el que lo ha hecho y el comercio en el que lo ha adquirido.
+SELECT cliente.nombre AS cliente, programa.nombre AS programa, registra.medio, comercio.nombre AS comercio
+FROM cliente, registra, programa, comercio
+WHERE cliente.dni = registra.dni
+  AND registra.codigo = programa.codigo
+  AND registra.cif = comercio.cif;
+
+39. Genera un listado con las ciudades en las que se pueden obtener los productos de Oracle.
+SELECT DISTINCT comercio.ciudad
+FROM comercio, distribuye, programa, desarrolla, fabricante
+WHERE comercio.cif = distribuye.cif
+  AND distribuye.codigo = programa.codigo
+  AND programa.codigo = desarrolla.codigo
+  AND desarrolla.id_fab = fabricante.id_fab
+  AND fabricante.nombre = 'Oracle';
+
+40. Obtén el nombre de los usuarios que han registrado Access XP.
+SELECT DISTINCT cliente.nombre
+FROM cliente, registra, programa
+WHERE cliente.dni = registra.dni
+  AND registra.codigo = programa.codigo
+  AND programa.nombre = 'Access'
+  AND programa.versión = 'XP';
